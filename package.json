@@ -1,0 +1,16 @@
+{
+  "name": "raysstream",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "db:generate": "pnpm --filter @raysstream/db prisma generate",
+    "db:migrate": "pnpm --filter @raysstream/db prisma migrate dev",
+    "db:seed": "pnpm --filter @raysstream/db prisma db seed"
+  },
+  "devDependencies": {
+    "turbo": "^2.9.5"
+  }
+}
