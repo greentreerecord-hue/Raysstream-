@@ -2,10 +2,10 @@ export const dynamic = "force-dynamic"
 import { prisma } from "@raysstream/db";
 import { getCurrentUser } from "@/lib/auth";
 import { not found } from "next/navigation";
-export default async function WatchPage({ params }: any) {
-  const slug = params.slug;
+export default async function 
+  Watchpage({ params }: any) {
   const user = await getCurrentUser();
-
+  const slug = params.slug;
   const video: any = await prisma.video.findUnique({
     where: { slug },
     include: {
