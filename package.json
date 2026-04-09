@@ -1,7 +1,7 @@
 {
   "name": "raysstream",
   "private": true, 
-  "packageManager": "pnpm@8",
+  "packageManager": "pnpm@8.15.0"
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
