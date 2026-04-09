@@ -1,3 +1,7 @@
-title: { contains: q }
-description: { contains: q }
-channel: { name: { contains: q } } 
+import { NextRequest, NextResponse } from "next/server";
+
+export async function GET(req: NextRequest) {
+  return NextResponse.json({
+    results: []
+  });
+} 
