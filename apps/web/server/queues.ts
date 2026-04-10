@@ -1,12 +1,12 @@
-import type { NextConfig } from "next";
+import { Queue } from "bullmq";
+import IORedis from "ioredis";
 
-const nextConfig: NextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-};
+const connection = new IORedis(process.env.REDIS_URL!);
 
-export default nextConfig;
+export const videoQueue = new Queue("video-transcode", {
+  connection,
+});
+
+export async function enqueueTranscodeJob(data: { videoId: string }) {
+  await videoQueue.add("transcode", data);
+} 
