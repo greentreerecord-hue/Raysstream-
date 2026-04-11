@@ -5,10 +5,9 @@
 
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm --filter @raysstream/db prisma generate && next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "pnpm --dir ../../packages/db exec prisma generate"
+    "lint": "next lint"
   },
 
   "dependencies": {
@@ -28,10 +27,9 @@
 
   "devDependencies": {
     "@types/node": "^22.5.10",
-    "@types/react": "^19.0.4",
+    "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "eslint": "^8.57.0",
-    "eslint-config-next": "15.2.4",
-    "typescript": "^5.6.2"
+    "typescript": "^5.9.3"
   }
 } 
+ 
